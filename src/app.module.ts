@@ -8,7 +8,13 @@ import { ShoppingCartModule } from './shopping_cart/shopping_cart.module';
 import { RegisterModule } from './register/register.module';
 
 @Module({
-  imports: [ContactModule, MenuModule, RequestModule, ShoppingCartModule, RegisterModule],
+  imports: [
+    ContactModule,
+    MenuModule,
+    RequestModule,
+    ShoppingCartModule,
+    RegisterModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
