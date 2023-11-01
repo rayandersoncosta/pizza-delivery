@@ -1,14 +1,22 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ContactModule } from './contact/contact.module';
-import { MenuModule } from './menu/menu.module';
-import { RequestModule } from './request/request.module';
-import { ShoppingCartModule } from './shopping_cart/shopping_cart.module';
-import { RegisterModule } from './register/register.module';
+import { ClienteModule } from './cliente/cliente.module';
+import { EndereçoModule } from './endereço/endereço.module';
+import { FormasPagamentosModule } from './formas_pagamentos/formas_pagamentos.module';
+import { ItensPedidoModule } from './itens_pedido/itens_pedido.module';
+import { PedidosModule } from './pedidos/pedidos.module';
+import { ProdutosModule } from './produtos/produtos.module';
 
 @Module({
-  imports: [ContactModule, MenuModule, RequestModule, ShoppingCartModule, RegisterModule],
+  imports: [
+    ClienteModule,
+    EndereçoModule,
+    FormasPagamentosModule,
+    ItensPedidoModule,
+    PedidosModule,
+    ProdutosModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
