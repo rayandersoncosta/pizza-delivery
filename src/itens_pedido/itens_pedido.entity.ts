@@ -11,7 +11,7 @@ export class ItensPedido {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column({ length: 100 })
+  @Column({ length: 225 })
   OBS: string;
 
   @Column()
