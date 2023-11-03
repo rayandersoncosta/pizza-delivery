@@ -1,7 +1,9 @@
+import { ItensPedido } from 'src/itens_pedido/itens_pedido.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -28,4 +30,7 @@ export class Produto {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(() => ItensPedido, (itensPedido) => itensPedido.produtos)
+  itensPedido: ItensPedido[];
 }

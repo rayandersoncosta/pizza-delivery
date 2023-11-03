@@ -1,7 +1,9 @@
+import { Endereco } from 'src/endereco/endereco.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -28,4 +30,7 @@ export class Cliente {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(() => Endereco, (enderecos) => enderecos.cliente)
+  enderecos: Endereco[];
 }
