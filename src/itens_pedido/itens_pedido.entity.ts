@@ -1,7 +1,11 @@
+import { Pedidos } from 'src/pedidos/pedidos.entity';
+import { Produto } from 'src/produtos/produtos.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -25,4 +29,12 @@ export class ItensPedido {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @ManyToOne(() => Pedidos, (pedidos) => pedidos.itensPedido)
+  @JoinColumn({ name: 'pedidos_id' })
+  pedidos: Pedidos;
+
+  @ManyToOne(() => Produto, (produtos) => produtos.itensPedido)
+  @JoinColumn({ name: 'produtos_id' })
+  produtos: Produto;
 }

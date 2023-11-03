@@ -1,7 +1,9 @@
+import { Pedidos } from 'src/pedidos/pedidos.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -19,4 +21,7 @@ export class FormaPagamento {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(() => Pedidos, (pedidos) => pedidos.formaPagamento)
+  pedidos: Pedidos[];
 }
