@@ -1,5 +1,5 @@
 import { Endereco } from 'src/endereco/endereco.entity';
-import { FormaPagamento } from 'src/formas_pagamentos/formas_pagamentos.entity';
+import { FormasPagamentos } from 'src/formas_pagamentos/formas_pagamentos.entity';
 import { ItensPedido } from 'src/itens_pedido/itens_pedido.entity';
 import {
   Column,
@@ -42,9 +42,9 @@ export class Pedidos {
   @JoinColumn({ name: 'endereco_id' })
   endereco: Endereco;
 
-  @ManyToOne(() => FormaPagamento, (formaPagamento) => formaPagamento.pedidos)
+  @ManyToOne(() => FormasPagamentos, (formaPagamento) => formaPagamento.pedidos)
   @JoinColumn({ name: 'forma_pagamento_id' })
-  formaPagamento: FormaPagamento;
+  formaPagamento: FormasPagamentos;
 
   @OneToMany(() => ItensPedido, (itensPedido) => itensPedido.pedidos)
   itensPedido: ItensPedido[];

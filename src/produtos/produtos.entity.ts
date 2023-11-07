@@ -9,18 +9,18 @@ import {
 } from 'typeorm';
 
 @Entity({ name: 'produtos' })
-export class Produto {
+export class Produtos {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ length: 150 })
-  nome: number;
+  nome: string;
 
   @Column({ length: 100 })
   tamanho: string;
 
   @Column({ length: 100 })
-  preço: string;
+  preco: string;
 
   @Column()
   quantidade: number;

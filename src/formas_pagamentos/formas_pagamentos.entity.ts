@@ -8,8 +8,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity({ name: 'formas pagamentos' })
-export class FormaPagamento {
+@Entity({ name: 'formas_pagamentos' })
+export class FormasPagamentos {
   @PrimaryGeneratedColumn('increment')
   id: number;
 

@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { EnderecoController } from './endereco.controller';
 
-describe('EndereçoController', () => {
+describe('EnderecoController', () => {
   let controller: EnderecoController;
 
   beforeEach(async () => {

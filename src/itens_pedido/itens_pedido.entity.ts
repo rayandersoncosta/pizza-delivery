@@ -1,5 +1,5 @@
 import { Pedidos } from 'src/pedidos/pedidos.entity';
-import { Produto } from 'src/produtos/produtos.entity';
+import { Produtos } from 'src/produtos/produtos.entity';
 import {
   Column,
   CreateDateColumn,
@@ -10,7 +10,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity({ name: 'itens pedidos' })
+@Entity({ name: 'itens_pedidos' })
 export class ItensPedido {
   @PrimaryGeneratedColumn('increment')
   id: number;
@@ -34,7 +34,7 @@ export class ItensPedido {
   @JoinColumn({ name: 'pedidos_id' })
   pedidos: Pedidos;
 
-  @ManyToOne(() => Produto, (produtos) => produtos.itensPedido)
+  @ManyToOne(() => Produtos, (produtos) => produtos.itensPedido)
   @JoinColumn({ name: 'produtos_id' })
-  produtos: Produto;
+  produtos: Produtos;
 }
