@@ -23,9 +23,6 @@ export class Pedidos {
   @Column({ length: 100 })
   tipo_entrega: string;
 
-  @Column({ length: 100 })
-  forma_pagamento: string;
-
   @Column()
   endereco_id: number;
 
