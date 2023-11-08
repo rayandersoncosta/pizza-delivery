@@ -16,7 +16,7 @@ export class ItensPedido {
   id: number;
 
   @Column({ length: 225 })
-  OBS: string;
+  obs: string;
 
   @Column()
   pedidos_id: number;
