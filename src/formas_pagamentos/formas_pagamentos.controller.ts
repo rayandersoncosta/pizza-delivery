@@ -15,7 +15,7 @@ export class FormasPagamentosController {
 
   @Post()
   @ApiCreatedResponse({
-    description: 'Pagamento feito com sucesso',
+    description: 'Forma de pagamento feito com sucesso',
     type: CreateFormasPagamentosResponseDto,
   })
   @ApiBadRequestResponse({
