@@ -8,6 +8,7 @@ import {
 } from '@nestjs/swagger';
 import { CreateClienteResponseDto } from './dto/create-cliente-response.dto';
 import { Cliente } from './cliente.entity';
+import { Public } from 'src/auth/decorators/public.decorators';
 
 @ApiTags('Cliente')
 @Controller('cliente')
@@ -22,6 +23,7 @@ export class ClienteController {
   @ApiBadRequestResponse({
     description: 'Quando da erro de validação dos dados enviados',
   })
+  @Public()
   create(@Body() newCliente: CreateClienteDto): Promise<Cliente> {
     return this.clienteService.create(newCliente);
   }
