@@ -27,7 +27,15 @@ export class ProdutosService {
       nullSort: 'last',
       defaultSortBy: [['id', 'DESC']],
       searchableColumns: ['id', 'nome'],
-      select: ['id', 'nome', 'created_at', 'updated_at'],
+      select: [
+        'id',
+        'nome',
+        'preco',
+        'quantidade',
+        'tamanho',
+        'created_at',
+        'updated_at',
+      ],
       filterableColumns: {
         id: [FilterOperator.EQ],
         name: [FilterOperator.EQ, FilterOperator.ILIKE],

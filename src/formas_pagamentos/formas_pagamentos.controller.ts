@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { FormasPagamentosService } from './formas_pagamentos.service';
 import { CreateFormasPagamentosDto } from './dto/create-formas-pagamentos-dto';
 import {
@@ -8,6 +8,7 @@ import {
 } from '@nestjs/swagger';
 import { CreateFormasPagamentosResponseDto } from './dto/create-formas-pagamentos-response.dto';
 import { Public } from 'src/auth/decorators/public.decorators';
+import { Paginate, PaginateQuery } from 'nestjs-paginate';
 
 @ApiTags('Formas de pagamentos')
 @Controller('formas_pagamentos')
@@ -25,5 +26,11 @@ export class FormasPagamentosController {
   @Public()
   create(@Body() newFormaPagamento: CreateFormasPagamentosDto) {
     return this.formaPagamentoService.create(newFormaPagamento);
+  }
+
+  @Get()
+  @Public()
+  getPaginated(@Paginate() query: PaginateQuery) {
+    return this.formaPagamentoService.getPaginated(query);
   }
 }
